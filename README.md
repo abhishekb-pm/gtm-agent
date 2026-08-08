@@ -30,20 +30,29 @@ Three documents in the `input/` folder:
 
 The `input/` folder contains a worked example for a **Scheduled Delivery** feature on a food delivery platform.
 
-## Setup
+## Two ways to run it
+
+### Option 1: Claude skill (no setup required)
+
+`SKILL.md` encodes the full agent as a Claude conversational skill. If you have Claude Code or the Claude desktop app:
+
+1. Add the skill to your Claude setup
+2. Start a new conversation and paste your PRD, experiment results, and rollout plan into chat
+3. Claude runs the full pipeline — 3-pass NPI, both HCAs, consistency check — and returns the documents in-conversation
+
+No API key, no terminal, no files to manage.
+
+### Option 2: Python script
 
 ```bash
 pip install -r requirements.txt
 export ANTHROPIC_API_KEY=your_key_here
-```
-
-## Usage
-
-```bash
 python3 gtm_agent.py
 ```
 
 Outputs are saved to `output/` with a datestamp. Expected runtime: ~60 seconds.
+
+Use this when you want saved output files, want to automate or chain this into another workflow, or prefer to run it from the terminal.
 
 ## The AI PM 2.0 standard
 
